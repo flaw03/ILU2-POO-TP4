@@ -1,6 +1,10 @@
 package scenarioTest;
 
 import personnages.Gaulois;
+import produit.Poisson;
+import produit.Produit;
+import produit.Sanglier;
+import village.IVillage;
 import villagegaulois.Etal;
 
 public class Scenario {
@@ -8,6 +12,17 @@ public class Scenario {
 	public static void main(String[] args) {
 
 		// TODO Partie 4 : creer de la classe anonyme Village
+        IVillage village = new IVillage() {
+            @Override
+            public <P extends Produit> boolean installerVendeur(Etal<P> etal, Gaulois vendeur, P[] produit, int prix) {
+                return false;
+            }
+
+            @Override
+            public DepenseMarchand[] acheterPoduit(String produit, int quantititeSouahaitee) {
+                return new DepenseMarchand[0];
+            }
+        }
 
 		// fin
 
