@@ -6,6 +6,7 @@ import produit.Produit;
 import produit.Sanglier;
 import village.IVillage;
 import villagegaulois.Etal;
+import villagegauloissold.DepenseMarchand;
 
 public class Scenario {
 
@@ -15,14 +16,17 @@ public class Scenario {
         IVillage village = new IVillage() {
             @Override
             public <P extends Produit> boolean installerVendeur(Etal<P> etal, Gaulois vendeur, P[] produit, int prix) {
-                return false;
-            }
+            	if (etal.)
+				etal.installerVendeur(vendeur,produit,prix);
+				return false;
+			}
 
             @Override
             public DepenseMarchand[] acheterPoduit(String produit, int quantititeSouahaitee) {
-                return new DepenseMarchand[0];
+                
+				return new DepenseMarchand[0];
             }
-        }
+        };
 
 		// fin
 
@@ -51,7 +55,7 @@ public class Scenario {
 
 		System.out.println(village);
 
-		DepenseMarchand[] depense = village.acheterProduit("sanglier", 3);
+		DepenseMarchand[] depense = village.acheterPoduit("sanglier", 3);
 
 		for (int i = 0; i < depense.length && depense[i] != null; i++) {
 			System.out.println(depense[i]);
